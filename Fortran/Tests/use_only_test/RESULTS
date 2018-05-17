@@ -1,0 +1,17 @@
+module mod_a
+    integer :: a, b, c
+end module
+
+module mod_b
+use mod_a
+    integer :: d, e, f
+end module
+
+program main
+use mod_b, only : d, e
+implicit none
+    print*, a,b,c,d,e,f
+end 
+
+!! a,b,c,f all compile errors
+

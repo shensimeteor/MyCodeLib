@@ -1,0 +1,10 @@
+c NCLFORTSTART
+      subroutine rectl(ctlf,mlev,nlev,levels,mvar,nvar,vars,varles)
+      integer mlev,nlev,mvar,nvar
+      real levels(mlev)
+      integer varles(mvar)
+      character*200 ctlf
+      character*20 vars(mvar)
+c NCLEND
+ 
+
