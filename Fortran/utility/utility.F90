@@ -258,7 +258,6 @@ end subroutine  !!}}}
 function get_funit(begin_search_unit) !!{{{
 implicit none
     integer :: begin_search_unit,get_funit
-    integer :: i
     logical :: unit_used
     integer,parameter :: MAX_UNIT=999
     get_funit = begin_search_unit
