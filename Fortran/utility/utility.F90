@@ -87,6 +87,24 @@ function tostring(ival,fval,sval,dval,fmat)  !!{{{
     tostring=trim(adjustl(tostring))
 end function  !!}}}
 
+
+function array2string(iarray, separator)
+implicit none
+    integer :: iarray(:)
+    character(len=*):: separator
+    character(len=200) :: array2string, fmtstr
+    integer i, n
+    n=size(iarray,1)
+    !fmtstr = '(' // trim(tostring(ival=n-1)) // "(I,'" // separator //"'), I)" 
+    !write(array2string, fmtstr) iarray
+    !array2string=trim(adjustl(array2string))
+    array2string=""
+    do i=1,n-1
+        array2string=trim(array2string)//trim(tostring(ival=iarray(i)))//separator
+    end do
+    array2string=trim(array2string)//trim(tostring(ival=iarray(n)))
+end function
+
     !! split string into nsub subs (subs must be unallocated allocatable string), separated by ch
     !! if unfound ch, return nsub=1, subs(1)=string
     subroutine str_split(string, ch, nsub, subs)  !!{{{
